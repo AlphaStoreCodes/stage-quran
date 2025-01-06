@@ -2,9 +2,16 @@
 
 A dedicated Discord bot for continuous Quran recitation in voice channels, featuring multiple renowned reciters and automatic stage channel management.
 
+░█████╗░██╗░░░░░██████╗░██╗░░██╗░█████╗░  ░██████╗████████╗░█████╗░██████╗░███████╗
+██╔══██╗██║░░░░░██╔══██╗██║░░██║██╔══██╗  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╔╝███████║███████║  ╚█████╗░░░░██║░░░██║░░██║██████╔╝█████╗░░
+██╔══██║██║░░░░░██╔═══╝░██╔══██║██╔══██║  ░╚═══██╗░░░██║░░░██║░░██║██╔══██╗██╔══╝░░
+██║░░██║███████╗██║░░░░░██║░░██║██║░░██║  ██████╔╝░░░██║░░░╚█████╔╝██║░░██║███████╗
+╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝╚══════╝
+
 ## Features
 
-- **Multiple Renowned Reciters** - Features recitations from well-known Qaris including:
+- 🎙️ **Multiple Renowned Reciters** - Features recitations from well-known Qaris including:
   - Abdullah Humaid
   - Ahmad Khedr
   - Abdul Basit Abdul Samad
@@ -12,17 +19,17 @@ A dedicated Discord bot for continuous Quran recitation in voice channels, featu
   - Mahmoud Al-Hosary
   - And many more...
 
-- **24/7 Continuous Playback**
+- 🔄 **24/7 Continuous Playback**
   - Automatically cycles through playlists
   - Seamless transitions between recitations
   - Auto-reconnects if disconnected
 
-- **Stage Channel Support**
+- 🎭 **Stage Channel Support**
   - Automatically joins stage channels
   - Manages speaker permissions
   - Handles stage channel protocols
 
-- **Advanced Features**
+- 🛠️ **Advanced Features**
   - High-quality audio playback
   - Automatic error recovery
   - Connection status monitoring
@@ -85,7 +92,6 @@ Edit `playlist.json` to customize reciters and playlists:
 You need to join our discord server to the rest files
 يجب عليك الانضمام لسيرفرنا الديسكور للملفات الاخرى
 بسبب كبر حجمها
-https://discord.gg/UhnY5agZRE
 
 ## Usage
 
