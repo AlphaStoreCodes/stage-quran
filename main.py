@@ -16,35 +16,39 @@ import time
 from dotenv import load_dotenv
 
 _COPYRIGHT='\n╔═══════════════════════════════════════════════════════════════╗\n║                                                               ║\n║       Copyright (c) 2024 Alpha Store. All rights reserved.    ║\n║                                                              ║\n╚═══════════════════════════════════════════════════════════════╝\n'
-_REQUIRED_LOGO='░█████╗░██╗░░░░░██████╗░██╗░░██╗░█████╗░  ░██████╗████████╗░█████╗░██████╗░███████╗\n██╔══██╗██║░░░░░██╔══██╗██║░░██║██╔══██╗  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝\n███████║██║░░░░░██████╔╝███████║███████║  ╚█████╗░░░░██║░░░██║░░██║██████╔╝█████╗░░\n██╔══██║██║░░░░░██╔═══╝░██╔══██║██╔══██║  ░╚═══██╗░░░██║░░░██║░░██║██╔══██╗██╔══╝░░\n██║░░██║███████╗██║░░░░░██║░░██║██║░░██║  ██████╔╝░░░██║░░░╚█████╔╝██║░░██║███████╗\n╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝╚══════╝'
+_ALPHA_RIGHTS='░█████╗░██╗░░░░░██████╗░██╗░░██╗░█████╗░  ░██████╗████████╗░█████╗░██████╗░███████╗\n██╔══██╗██║░░░░░██╔══██╗██║░░██║██╔══██╗  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝\n███████║██║░░░░░██████╔╝███████║███████║  ╚█████╗░░░░██║░░░██║░░██║██████╔╝█████╗░░\n██╔══██║██║░░░░░██╔═══╝░██╔══██║██╔══██║  ░╚═══██╗░░░██║░░░██║░░██║██╔══██╗██╔══╝░░\n██║░░██║███████╗██║░░░░░██║░░██║██║░░██║  ██████╔╝░░░██║░░░╚█████╔╝██║░░██║███████╗\n╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝╚══════╝'
 def _v0(p):return os.path.exists(p)
 def _v1(p):
 	try:
 		with open(p,'r',encoding='utf-8')as A:return A.read().strip()
 	except:return''
 def _v3():
-	J='requirements.data';I='playlist.json';H='LICENSE';G='readme.md';B='reciters'
+	K='requirements.data';J='playlist.json';I='LICENSE';H='readme.md';B='reciters'
 	try:
-		print(_COPYRIGHT);time.sleep(1);K=[G,H,'.env',I,J];C=[A for A in K if not _v0(A)]
-		if C:print(f"\nError: Missing required files: {', '.join(C)}");sys.exit(1)
-		D=_v1(H)
-		if not D:print('Error: Invalid configuration - LICENSE file is empty');sys.exit(1)
-		if _REQUIRED_LOGO.strip()not in D:print('Error: Invalid configuration - LICENSE logo verification failed');sys.exit(1)
+		print(_COPYRIGHT);time.sleep(1)
+		if not _v0(H):print('\nError: README.md file is missing');sys.exit(1)
+		C=_v1(H)
+		if not C:print('Error: Invalid configuration - README.md is empty');sys.exit(1)
+		if _ALPHA_RIGHTS.strip()not in C:print('Error: Invalid configuration - README.md Alpha Rights verification failed');sys.exit(1)
+		L=[I,'.env',J,K];D=[A for A in L if not _v0(A)]
+		if D:print(f"\nError: Missing required files: {', '.join(D)}");sys.exit(1)
+		E=_v1(I)
+		if not E:print('Error: Invalid configuration - LICENSE file is empty');sys.exit(1)
+		if _ALPHA_RIGHTS.strip()not in E:print('Error: Invalid configuration - LICENSE Alpha Rights verification failed');sys.exit(1)
 		try:
-			with open(I,'r')as L:
-				A=json.load(L)
+			with open(J,'r')as M:
+				A=json.load(M)
 				if B not in A or not isinstance(A[B],list):print("Error: Invalid configuration - playlist.json missing 'reciters' array");sys.exit(1)
-				for E in A[B]:
-					if'name'not in E or'playList'not in E:print('Error: Invalid configuration - playlist.json reciter missing required fields');sys.exit(1)
+				for F in A[B]:
+					if'name'not in F or'playList'not in F:print('Error: Invalid configuration - playlist.json reciter missing required fields');sys.exit(1)
 		except json.JSONDecodeError:print('Error: Invalid configuration - playlist.json is not valid JSON');sys.exit(1)
 		except:print('Error: Invalid configuration - playlist.json read failed');sys.exit(1)
-		F=_v1(J)
-		if not F:print('Error: Invalid configuration - requirements.data is empty');sys.exit(1)
-		if _REQUIRED_LOGO.strip()not in F:print('Error: Invalid configuration - requirements.data logo verification failed');sys.exit(1)
-		M=_v1(G)
-		if not M:print('Error: Invalid configuration - readme.md is empty');sys.exit(1)
-		print(_REQUIRED_LOGO);print('\nInitialization successful...\n');return True
+		G=_v1(K)
+		if not G:print('Error: Invalid configuration - requirements.data is empty');sys.exit(1)
+		if _ALPHA_RIGHTS.strip()not in G:print('Error: Invalid configuration - requirements.data Alpha Rights verification failed');sys.exit(1)
+		print(_ALPHA_RIGHTS);print('\nInitialization successful...\n');return True
 	except Exception as N:print(f"Error: Configuration verification failed - {str(N)}");return False
+
     
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
